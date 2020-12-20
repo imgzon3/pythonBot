@@ -1,1 +1,1 @@
-from bot_info import *
+from pythonBot.bot_info import *

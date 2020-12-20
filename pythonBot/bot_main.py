@@ -1,4 +1,4 @@
-from bot_music import *
+from pythonBot.bot_music import *
 
 
 @bot.event  # 봇 로그인 상태 전환, 상태 메세지
