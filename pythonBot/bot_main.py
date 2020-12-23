@@ -11,7 +11,7 @@ async def on_ready():
 
 @bot.command()  # 도움말
 async def help(ctx):
-    help_txt = discord.Embed(title='장인이 봇 도움말', description='봇 도움말 목록입니다!', color=0xfcffab)
+    help_txt = discord.Embed(title=':headphones:장인이 봇 도움말', description='봇 도움말 목록입니다!', color=0xfcffab)
     help_txt.add_field(name='노래 명령어', inline=False,
                        value='//play [제목/url] - 노래를 재생합니다.  ("//p, //재생"명령어로도 가능)\n\n'
                              '//queue - 현재 대기열을 보여줍니다.  ("//대기열, //list"명령어로도 가능)\n\n'
@@ -34,7 +34,7 @@ async def help(ctx):
 
 @bot.command()  # 도움말
 async def 도움(ctx):
-    help_txt = discord.Embed(title='장인이 봇 도움말', description='봇 도움말 목록입니다!', color=0xfcffab)
+    help_txt = discord.Embed(title=':headphones:장인이 봇 도움말', description='봇 도움말 목록입니다!', color=0xfcffab)
     help_txt.add_field(name='노래 명령어', inline=False,
                        value='//play [제목/url] - 노래를 재생합니다.  ("//p, //재생"명령어로도 가능)\n\n'
                              '//queue - 현재 대기열을 보여줍니다.  ("//대기열, //list"명령어로도 가능)\n\n'

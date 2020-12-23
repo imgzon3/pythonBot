@@ -19,14 +19,17 @@ def endSong(guild, path):
 
 
 @bot.command(pass_context=True)
-async def play(ctx, url):
+async def play(ctx, url=None):
+    if url is None:
+        await ctx.send('노래 제목 혹은 유튜브 url을 달아주세요!')
+        return
+
     if not ctx.message.author.voice:
         await ctx.send('노래 재생을 위해서는 음성 채널에 입장해 주세요!')
         return
 
     else:
         channel = ctx.message.author.voice.channel
-
     voice_client = await channel.connect()
 
     guild = ctx.message.guild

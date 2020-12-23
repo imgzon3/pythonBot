@@ -20,19 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb629fcc-ee73-449a-89e0-144501ef86c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonBot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBot/[HD]  노브레인 (NoBrain) - 비와 당신-hKCC86slEsA.webm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBot/[퇴근버스] 에어맨이 쓰러지지 않아 (Full ver. Cover)-AYfwipn_AcU.webm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBot/bot_vote.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBot/bot_weather.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBot/music/music_play.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pythonBot/bot_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBot/bot_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBot/bot_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBot/bot_music.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonBot/music/music_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBot/music/music_play.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,28 +107,29 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="634" y="269" key="FileChooserDialogImpl" timestamp="1608478959175">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="634" y="269" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1608478959175" />
-    <state width="1685" height="277" key="GridCell.Tab.0.bottom" timestamp="1608573210398">
+    <state width="1685" height="277" key="GridCell.Tab.0.bottom" timestamp="1608724710203">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1685" height="277" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1608573210398" />
-    <state width="1685" height="277" key="GridCell.Tab.0.center" timestamp="1608573210398">
+    <state width="1685" height="277" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1608724710203" />
+    <state width="1685" height="277" key="GridCell.Tab.0.center" timestamp="1608724710202">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1685" height="277" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1608573210398" />
-    <state width="1685" height="277" key="GridCell.Tab.0.left" timestamp="1608573210398">
+    <state width="1685" height="277" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1608724710202" />
+    <state width="1685" height="277" key="GridCell.Tab.0.left" timestamp="1608724710202">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1685" height="277" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1608573210398" />
-    <state width="1685" height="277" key="GridCell.Tab.0.right" timestamp="1608573210398">
+    <state width="1685" height="277" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1608724710202" />
+    <state width="1685" height="277" key="GridCell.Tab.0.right" timestamp="1608724710202">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1685" height="277" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1608573210398" />
+    <state width="1685" height="277" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1608724710202" />
     <state x="269" y="46" key="SettingsEditor" timestamp="1608571331266">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
