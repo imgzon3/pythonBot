@@ -1,8 +1,6 @@
 from pythonBot.bot_music import *
 from pythonBot.bot_vote import *
 from pythonBot.bot_weather import *
-
-
 @bot.event  # 봇 로그인 상태 전환, 상태 메세지
 async def on_ready():
     print('다음으로 로그인합니다: ', bot.user.name)

@@ -22,6 +22,7 @@
     <list default="true" id="eb629fcc-ee73-449a-89e0-144501ef86c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pythonBot/bot_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBot/bot_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonBot/bot_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBot/bot_music.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pythonBot/music/music_play.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBot/music/music_play.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,15 +49,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pythonBot" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/test" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\imgzo\git\pythonBot\pythonBot\pythonBot" />
+      <recent name="C:\Users\imgzo\git\pythonBot\pythonBot\pythonBot\weather" />
+      <recent name="C:\Users\imgzo\git\pythonBot\pythonBot\pythonBot\vote" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.bot_main">
     <configuration name="bot_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -78,9 +81,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="youtube_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pythonBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pythonBot/music" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonBot/music/youtube_api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.bot_main" />
+        <item itemvalue="Python.youtube_api" />
       </list>
     </recent_temporary>
   </component>
@@ -110,29 +135,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="634" y="269" key="FileChooserDialogImpl" timestamp="1608478959175">
+    <state x="309" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608803537278">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="634" y="269" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1608478959175" />
-    <state width="1685" height="277" key="GridCell.Tab.0.bottom" timestamp="1608724710203">
+    <state x="309" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1027@0.0.1707.1027" timestamp="1608803537278" />
+    <state x="634" y="269" key="FileChooserDialogImpl" timestamp="1608805131653">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1685" height="277" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1608724710203" />
-    <state width="1685" height="277" key="GridCell.Tab.0.center" timestamp="1608724710202">
+    <state x="634" y="269" key="FileChooserDialogImpl/0.0.1707.1027@0.0.1707.1027" timestamp="1608805131653" />
+    <state width="1685" height="278" key="GridCell.Tab.0.bottom" timestamp="1608805275197">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1685" height="277" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1608724710202" />
-    <state width="1685" height="277" key="GridCell.Tab.0.left" timestamp="1608724710202">
+    <state width="1685" height="278" key="GridCell.Tab.0.bottom/0.0.1707.1027@0.0.1707.1027" timestamp="1608805275197" />
+    <state width="1685" height="278" key="GridCell.Tab.0.center" timestamp="1608805275197">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1685" height="277" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1608724710202" />
-    <state width="1685" height="277" key="GridCell.Tab.0.right" timestamp="1608724710202">
+    <state width="1685" height="278" key="GridCell.Tab.0.center/0.0.1707.1027@0.0.1707.1027" timestamp="1608805275197" />
+    <state width="1685" height="278" key="GridCell.Tab.0.left" timestamp="1608805275197">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state width="1685" height="277" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1608724710202" />
-    <state x="269" y="46" key="SettingsEditor" timestamp="1608571331266">
+    <state width="1685" height="278" key="GridCell.Tab.0.left/0.0.1707.1027@0.0.1707.1027" timestamp="1608805275197" />
+    <state width="1685" height="278" key="GridCell.Tab.0.right" timestamp="1608805275197">
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
-    <state x="269" y="46" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1608571331266" />
+    <state width="1685" height="278" key="GridCell.Tab.0.right/0.0.1707.1027@0.0.1707.1027" timestamp="1608805275197" />
+    <state x="353" y="233" key="SettingsEditor" timestamp="1608802294758">
+      <screen x="0" y="0" width="1707" height="1027" />
+    </state>
+    <state x="353" y="233" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1608802294758" />
   </component>
 </project>
