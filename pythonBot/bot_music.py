@@ -1,4 +1,4 @@
-from pythonBot.music.music_play import *
+from pythonBot.music.music_command import *
 
 # 노래 관련된 명령어 정리
 

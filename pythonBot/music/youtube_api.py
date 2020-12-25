@@ -16,16 +16,27 @@ def search_youtube(a):
 
     print('[api]Searching url...')
 
+    videoId = ''
     search_response = youtube.search().list(
         q=a,
-        order="date",
         part="snippet",
-        maxResults=1
+        maxResults=5
     ).execute()
 
+    # 채널: id의 kind는 youtube#channel, 주소는 channelId
+    # 영상: id의 kind는 youtube#video, 주소는 videoId
+    # 플레이 리스트 : id의 kind는 youtube#playlist, 주소는 playlistId
     for search_result in search_response['items']:
-        videoId = search_result['id']['videoId']
+        if search_result['id']['kind'] == 'youtube#video':
+            videoId = search_result['id']['videoId']
+            break
     print('[api]Url Search complete')
     # print("https://youtu.be/"+videoId)
     # print(videoId)
-    return "https://youtu.be/"+videoId
+
+    # 검색결과가 없거나 상위 5개 목록에 영상이 없을 경우
+    if videoId == '':
+        return ''
+    else:
+        videoId = "https://youtu.be/"+videoId
+        return videoId
