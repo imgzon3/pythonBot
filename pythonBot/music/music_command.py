@@ -119,8 +119,10 @@ async def stop(ctx):
 async def queue(ctx):
     if len(queue_list) is 0:
         await ctx.send(':headphones:현재 재생중인 노래가 없습니다!')
-    help_txt = discord.Embed(title=':headphones:재생목록', color=0xfcffab)
-    help_txt.add_field(name='현재 재생 중', inline=False, value='['+queue_list[0][2]+'] '+queue_list[0][1])
-    for i in range():
-        
-    await ctx.send(embed=help_txt)
+    queue_txt = discord.Embed(title=':headphones:재생목록', color=0xfcffab)
+    queue_txt.add_field(name='현재 재생 중', inline=False, value='['+queue_list[0][2]+'] '+queue_list[0][1])
+    queue_tmp = ''
+    for i in range(1, len(queue_list)):
+        queue_tmp = queue_tmp + i + '. [' + queue_list[i][2] + '] ' + queue_list[i][1] + '\n'
+    queue_txt.add_field(name='대기 목록', inline=False, value=queue_tmp)
+    await ctx.send(embed=queue_txt)
