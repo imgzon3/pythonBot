@@ -13,13 +13,13 @@ async def on_ready():
 async def help(ctx):
     help_txt = discord.Embed(title=':headphones:장인이 봇 도움말', description='봇 도움말 목록입니다!', color=0xfcffab)
     help_txt.add_field(name='노래 명령어', inline=False,
-                       value='//play [제목/url] - 노래를 재생합니다.  ("//p, //재생"명령어로도 가능)\n\n'
-                             '//queue - 현재 대기열을 보여줍니다.  ("//대기열, //list"명령어로도 가능)\n\n'
+                       value='//play [제목/url] - 노래를 재생합니다.  ("//p"명령어로도 가능)\n\n'
+                             '//queue - 현재 대기열을 보여줍니다.  ("//대기열"명령어로도 가능)\n\n'
                              '//remove [위치/all/전부] - 대기열에서 특정 순서의 노래를 제거하거나, 전부 제거합니다  '
-                             '("//delete, //삭제"명령어로도 가능)\n\n'
+                             '("//삭제"명령어로도 가능)\n\n'
                              '//skip - 현재 재생중인 노래를 건너뜁니다.  ("//넘기기"명령어로도 가능)\n\n'
                              '//stop - 현재 대기열을 포함한 모든 노래를 종료합니다.  ("//정지"명령어로도 가능)\n\n'
-                             '//now - 현재 재생하고 있는 노래를 보여줍니다.  ("//current, //현재"명령어로도 가능)')
+                             '//now - 현재 재생하고 있는 노래를 보여줍니다.  ("//현재"명령어로도 가능)')
     help_txt.add_field(name='날씨 명령어', inline=False,
                        value='업데이트 예정')
     help_txt.add_field(name='투표 명령어', inline=False,
@@ -32,13 +32,13 @@ async def help(ctx):
 async def 도움(ctx):
     help_txt = discord.Embed(title=':headphones:장인이 봇 도움말', description='봇 도움말 목록입니다!', color=0xfcffab)
     help_txt.add_field(name='노래 명령어', inline=False,
-                       value='//play [제목/url] - 노래를 재생합니다.  ("//p, //재생"명령어로도 가능)\n\n'
-                             '//queue - 현재 대기열을 보여줍니다.  ("//대기열, //list"명령어로도 가능)\n\n'
+                       value='//play [제목/url] - 노래를 재생합니다.  ("//p"명령어로도 가능)\n\n'
+                             '//queue - 현재 대기열을 보여줍니다.  ("//대기열"명령어로도 가능)\n\n'
                              '//remove [위치/all/전부] - 대기열에서 특정 순서의 노래를 제거하거나, 전부 제거합니다  '
-                             '("//delete, //삭제"명령어로도 가능)\n\n'
+                             '("//삭제"명령어로도 가능)\n\n'
                              '//skip - 현재 재생중인 노래를 건너뜁니다.  ("//넘기기"명령어로도 가능)\n\n'
                              '//stop - 현재 대기열을 포함한 모든 노래를 종료합니다.  ("//정지"명령어로도 가능)\n\n'
-                             '//now - 현재 재생하고 있는 노래를 보여줍니다.  ("//current, //현재"명령어로도 가능)')
+                             '//now - 현재 재생하고 있는 노래를 보여줍니다.  ("//현재"명령어로도 가능)')
     help_txt.add_field(name='날씨 명령어', inline=False,
                        value='업데이트 예정')
     help_txt.add_field(name='투표 명령어', inline=False,
