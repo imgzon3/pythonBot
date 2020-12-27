@@ -69,72 +69,199 @@ async def play(ctx, *, url=None):
             queue_list.pop()
             return
 
+    if status_list[0] == 0:
+        status_list.pop()
+        status_list.append(1)
+
     # 노래 추가 결과 알림
     song_embed = discord.Embed(title=':headphones:노래가 추가되었습니다.', color=0xfcffab)
     song_embed.add_field(name='노래 제목:', inline=False, value=file['title'])
     if len(queue_list) is 1:
         queue_txt = '현재 재생 중'
     else:
-        queue_txt = len(queue_list)-1
+        queue_txt = len(queue_list) - 1
     song_embed.add_field(name='순서', inline=False, value=queue_txt)
     song_embed.add_field(name='곡 길이:', inline=False, value=song_time)
     song_embed.add_field(name='링크', inline=False, value=url)
     await ctx.send(embed=song_embed)
-
-    if status_list[0] == 0:
-        status_list.pop()
-        status_list.append(1)
 
     # 노래가 재생되고 있지 않다면 접속 종료, queue_list 남아있을 경우 계속
     while True:
         while voice.is_playing():
             await asyncio.sleep(1)
         else:
-            queue_list.pop(0)
-            if len(queue_list) != 0:
-                # await ctx.send(':headphones: 이어서 ['+queue_list[0][2]+']'+queue_list[1]+'이(가) 재생됩니다.')
-                print(queue_list)
-                voice.play(discord.FFmpegPCMAudio(queue_list[0][0]), after=lambda x: endSong(guild, queue_list[0][0]))
-                voice.source = discord.PCMVolumeTransformer(voice.source, 1)
-            else:
-                status_list.pop()
-                status_list.append(0)
-                voice.stop()
-                print("Disconnected")
+            if status_list[0] is 1:
+                queue_list.pop(0)
+                if len(queue_list) != 0:
+                    # await ctx.send(':headphones: 이어서 ['+queue_list[0][2]+']'+queue_list[1]+'이(가) 재생됩니다.')
+                    print(queue_list)
+                    voice.play(discord.FFmpegPCMAudio(queue_list[0][0]),
+                               after=lambda x: endSong(guild, queue_list[0][0]))
+                    voice.source = discord.PCMVolumeTransformer(voice.source, 1)
+                else:
+                    status_list.pop()
+                    status_list.append(0)
+                    await ctx.voice_client.disconnect()
+                    print("Disconnected")
+                    break
+            elif status_list[0] is 0:
+                print('Disconnected by other')
                 break
 
 
 @bot.command(pass_context=True)
-async def stop(ctx):
+async def skip(ctx):
+    # 사용자가 음성 채널에 접속하지 않았을 경우
     if not ctx.message.author.voice:
         await ctx.send(':headphones:음성 채널에 입장해 주세요!')
         return
+
+    # 노래 재생 중인 상태가 아닌 경우
+    elif len(queue_list) is 0:
+        await ctx.send(':headphones:노래가 재생되고 있지 않습니다.')
+        return
+
+    # 노래 재생 중인 경우
+    elif len(queue_list) > 0:
+        # 다음 노래가 있을 경우
+        if len(queue_list) > 1:
+            voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
+            voice.stop()
+            await ctx.send(':headphones:다음 노래로 스킵합니다.')
+            print('skip')
+            return
+        # 다음 노래가 없을 경우
+        else:
+            voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
+            status_list.pop()
+            status_list.append(0)
+            queue_list.clear()
+            voice.stop()
+            await ctx.voice_client.disconnect()
+            await ctx.send(':headphones:다음 노래가 없어 봇이 종료됩니다.')
+            print("Disconnected")
+            return
+
+
+@bot.command(pass_context=True)
+async def stop(ctx):
+    # 사용자가 음성 채널에 접속하지 않았을 경우
+    if not ctx.message.author.voice:
+        await ctx.send(':headphones:음성 채널에 입장해 주세요!')
+        return
+
+    # 노래 재생 중인 상태가 아닌 경우
+    elif len(queue_list) is 0:
+        await ctx.send(':headphones:노래가 재생되고 있지 않습니다.')
+        return
+
+    # 노래 재생 중인 경우
     else:
         voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
+        if len(queue_list) != 1:
+            for i in range(1, len(queue_list)):
+                # 대기열의 노래 삭제
+                endSong(queue_list[i][0])
+        queue_list.clear()
+        status_list.pop()
+        status_list.append(0)
         voice.stop()
+        await ctx.voice_client.disconnect()
+        print("Disconnected")
         await ctx.send(':headphones:플레이리스트 제거 후 봇이 종료됩니다.')
 
 
 @bot.command(pass_context=True)
 async def queue(ctx):
+    # 노래 재생 중인 상태가 아닌 경우
     if len(queue_list) is 0:
         await ctx.send(':headphones:현재 재생중인 노래가 없습니다!')
+
+    # 노래 재생 중인 경우
     else:
         queue_txt = discord.Embed(title=':headphones:재생목록', color=0xfcffab)
-        queue_txt.add_field(name='현재 재생 중', inline=False, value='['+queue_list[0][2]+'] '+queue_list[0][1])
-        queue_tmp = ''
-        for i in range(1, len(queue_list)):
-            queue_tmp = queue_tmp + i + '. [' + queue_list[i][2] + '] ' + queue_list[i][1] + '\n'
-        queue_txt.add_field(name='대기 목록', inline=False, value=queue_tmp)
+        queue_txt.add_field(name='현재 재생 중', inline=False, value='[' + queue_list[0][2] + '] ' + queue_list[0][1])
+
+        # 대기 목록이 없는 경우
+        if len(queue_list) is 1:
+            queue_txt.add_field(name='대기 목록', inline=False, value='대기 목록이 없습니다!')
+
+        # 대기 목록이 있는 경우
+        elif len(queue_list) > 1:
+            queue_tmp = ''
+            for i in range(1, len(queue_list)):
+                queue_tmp = queue_tmp + str(i) + '. [' + queue_list[i][2] + '] ' + str(queue_list[i][1]) + '\n'
+            queue_txt.add_field(name='대기 목록', inline=False, value=queue_tmp)
         await ctx.send(embed=queue_txt)
 
 
 @bot.command(pass_context=True)
 async def now(ctx):
-    if len(queue_list) is 0:
+    # 사용자가 음성 채널에 접속하지 않았을 경우
+    if not ctx.message.author.voice:
+        await ctx.send(':headphones:음성 채널에 입장해 주세요!')
+        return
+
+    # 노래 재생 중인 상태가 아닌 경우
+    elif len(queue_list) is 0:
         await ctx.send(':headphones:현재 재생중인 노래가 없습니다!')
+        return
+
+    # 노래 재생 중인 경우
     else:
-        now_txt = discord.Embed(title=':headphones:현재 재생중인 노래')
+        now_txt = discord.Embed(title=':headphones:현재 재생중인 노래', color=0xfcffab)
         now_txt.add_field(name='노래 제목:', inline=False, value=queue_list[0][1])
         now_txt.add_field(name='곡 길이:', inline=False, value=queue_list[0][2])
-        await ctx.send(now_txt)
+        await ctx.send(embed=now_txt)
+
+
+@bot.command(pass_context=True)
+async def remove(ctx, *, index=None):
+    # 노래 재생 중인 상태가 아닌 경우
+    if len(queue_list) is 0:
+        await ctx.send(':headphones:현재 재생중인 노래가 없습니다!')
+        return
+
+    # 대기 목록이 없을 경우
+    elif len(queue_list) is 1:
+        await ctx.send(':headphones:현재 대기 목록이 없습니다!')
+        return
+
+    # 대기 목록이 있는 경우
+    else:
+        # all 입력 시
+        if index is 'all':
+            for i in range(1, len(queue_list)):
+                # 대기열의 노래 삭제
+                endSong(queue_list[i][0])
+                queue_list.pop(1)
+            await ctx.send(':headphones:모든 대기 목록을 삭제했습니다.')
+            return
+
+        # 전부 입력 시
+        elif index is '전부':
+            for i in range(1, len(queue_list)):
+                # 대기열의 노래 삭제
+                endSong(queue_list[i][0])
+                queue_list.pop(1)
+            await ctx.send(':headphones:모든 대기 목록을 삭제했습니다.')
+            return
+
+        # 삭제할 숫자 입력 시
+        elif 1 <= index <= len(queue_list):
+            await ctx.send(':headphones:'+str(index)+'번 째 노래 '+queue_list[index][1]+'을 삭제합니다.')
+            endSong(queue_list[index][0])
+            queue_list.pop(index)
+            return
+
+        # 재생목록 이외의 숫자 입력 시
+        elif index < 1 or index > len(queue_list):
+            await ctx.send(':headphones:현재 대기중인 곡은 '+str(len(queue_list)-1)+'개 입니다.')
+
+        # 다른 것, null일 시
+        else:
+            await ctx.send(':headphones:지우실 대기 목록을 선택해주세요!\n'
+                           'remove [전부/all/위치]로 지정할 수 있습니다.\n'
+                           '현재 대기중인 곡: '+str(len(queue_list)-1)+'개')
+            return
+
