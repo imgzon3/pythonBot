@@ -11,6 +11,7 @@ queue_list = []
 status_list = [0]  # 재생중이면 1, 아니라면 0
 
 
+# play 명령어 첫 시작 후 노래 등록 전에 play사용 시 오류 발생, 해결 필요
 @bot.command(pass_context=True)
 async def play(ctx, *, url=None):
     # 입력 값이 없을 경우
