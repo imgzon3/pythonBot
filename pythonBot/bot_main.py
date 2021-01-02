@@ -1,3 +1,4 @@
+# 각각 명령어들 가져오기
 from pythonBot.bot_music import *
 from pythonBot.bot_vote import *
 from pythonBot.bot_weather import *

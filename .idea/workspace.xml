@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb629fcc-ee73-449a-89e0-144501ef86c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pythonBot/music/music_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBot/music/music_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonBot/bot_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBot/bot_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,5 +161,16 @@
       <screen x="0" y="0" width="1707" height="1027" />
     </state>
     <state x="353" y="233" key="SettingsEditor/0.0.1707.1027@0.0.1707.1027" timestamp="1608802294758" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pythonBot/bot_main.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
