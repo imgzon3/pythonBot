@@ -8,7 +8,7 @@ def endSong(guild, path):
     os.remove(path)
 
 
-# 노래 리스트 저장
+# 노래 리스트 저장('파일 이름', '제목', '시간' 리스트 하나씩 저장됨)
 queue_list = []
 status_list = [0]  # 재생중이면 1, 아니라면 0
 
