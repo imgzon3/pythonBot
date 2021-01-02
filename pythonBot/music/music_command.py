@@ -3,10 +3,12 @@ from pythonBot.music.youtube_api import search_youtube
 import math
 
 
+# 저장된 노래 지우는 함수
 def endSong(guild, path):
     os.remove(path)
 
 
+# 노래 리스트 저장
 queue_list = []
 status_list = [0]  # 재생중이면 1, 아니라면 0
 
