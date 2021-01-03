@@ -2,6 +2,7 @@
 from pythonBot.bot_music import *
 from pythonBot.bot_vote import *
 from pythonBot.bot_weather import *
+# 잠시 보류하기 (전체 클래스화 필요 및 성능 개선)
 
 
 @bot.event  # 봇 로그인 상태 전환, 상태 메세지
